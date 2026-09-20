@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>My Courses - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">ADSO</a>
+    <nav><a href="/dashboard">Dashboard</a><a href="/courses">Courses</a><a href="/profile">Profile</a><a href="/logout">Logout</a></nav>
+</header>
+<main class="container">
+    <h1>My Courses</h1>
+    <p class="success" th:if="${param.success}">Course enrollment successful.</p>
+    <div class="course-grid">
+        <article class="course-card" th:each="course : ${courses}">
+            <img th:src="${course.thumbnailUrl}" th:alt="${course.title}">
+            <div class="course-body">
+                <span class="badge" th:text="${course.level}"></span>
+                <h2 th:text="${course.title}"></h2>
+                <p th:text="${course.description}"></p>
+                <a class="button small" th:href="@{/courses/{id}(id=${course.id})}">Open Course</a>
+            </div>
+        </article>
+    </div>
+    <p th:if="${#lists.isEmpty(courses)}">You have not enrolled in any course yet.</p>
+</main>
+</body>
+</html>

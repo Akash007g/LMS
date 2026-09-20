@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Login - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar"><a href="/" class="brand">ADSO</a><nav><a href="/register">Register</a></nav></header>
+<main class="container narrow">
+    <div class="card">
+        <h1>Login</h1>
+        <p class="success" th:if="${message}" th:text="${message}"></p>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <form action="/login" method="post">
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Password</label>
+            <input type="password" name="password" required>
+            <button class="button" type="submit">Login</button>
+        </form>
+        <p>New user? <a href="/register">Create account</a></p>
+    </div>
+</main>
+</body>
+</html>

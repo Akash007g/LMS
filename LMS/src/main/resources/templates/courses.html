@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Courses - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">ADSO</a>
+    <nav>
+        <a th:if="${loggedIn}" href="/dashboard">Dashboard</a>
+        <a th:if="${loggedIn}" href="/my-courses">My Courses</a>
+        <a th:if="${loggedIn}" href="/profile">Profile</a>
+        <a th:if="${loggedIn}" href="/logout">Logout</a>
+        <a th:if="${!loggedIn}" href="/login">Login</a>
+        <a th:if="${!loggedIn}" class="nav-button" href="/register">Register</a>
+    </nav>
+</header>
+<main class="container">
+    <h1>Courses</h1>
+    <div class="course-grid">
+        <article class="course-card" th:each="course : ${courses}">
+            <img th:src="${course.thumbnailUrl}" th:alt="${course.title}">
+            <div class="course-body">
+                <span class="badge" th:text="${course.level}"></span>
+                <h2 th:text="${course.title}"></h2>
+                <p th:text="${course.description}"></p>
+                <a class="button small" th:href="@{/courses/{id}(id=${course.id})}">View Details</a>
+            </div>
+        </article>
+    </div>
+</main>
+</body>
+</html>

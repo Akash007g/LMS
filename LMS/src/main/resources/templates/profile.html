@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Profile - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">ADSO</a>
+    <nav><a href="/dashboard">Dashboard</a><a href="/courses">Courses</a><a href="/my-courses">My Courses</a><a href="/logout">Logout</a></nav>
+</header>
+<main class="container narrow">
+    <div class="card">
+        <h1>My Profile</h1>
+        <p><b>Name:</b> <span th:text="${user.fullName}"></span></p>
+        <p><b>Email:</b> <span th:text="${user.email}"></span></p>
+        <p><b>Phone:</b> <span th:text="${user.phone ?: '-'}"></span></p>
+        <p><b>Role:</b> <span th:text="${user.role}"></span></p>
+    </div>
+</main>
+</body>
+</html>

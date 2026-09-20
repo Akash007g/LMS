@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Verify OTP - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar"><a href="/" class="brand">ADSO</a></header>
+<main class="container narrow">
+    <div class="card">
+        <h1>Verify OTP</h1>
+        <p>Enter the OTP sent to your email.</p>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <form action="/verify-otp" method="post">
+            <input type="email" name="email" placeholder="Email" th:value="${email}" required>
+            <input type="text" name="otp" placeholder="6-digit OTP" maxlength="6" required>
+            <button class="button" type="submit">Verify OTP</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

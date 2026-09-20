@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Register - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar"><a href="/" class="brand">ADSO</a><nav><a href="/login">Login</a></nav></header>
+<main class="container narrow">
+    <div class="card">
+        <h1>Create Account</h1>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <form th:action="@{/register}" th:object="${registerRequest}" method="post">
+            <label>Full Name</label>
+            <input type="text" th:field="*{fullName}" required>
+            <label>Email</label>
+            <input type="email" th:field="*{email}" required>
+            <label>Phone</label>
+            <input type="text" th:field="*{phone}">
+            <label>Password</label>
+            <input type="password" th:field="*{password}" minlength="6" required>
+            <button class="button" type="submit">Register</button>
+        </form>
+        <p>Already registered? <a href="/login">Login</a></p>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ADSO | Learn with momentum</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="landing-page">
+<header class="navbar landing-nav">
+    <a href="/" class="brand"><span class="brand-mark">A</span><span>ADSO</span></a>
+    <nav>
+        <a class="nav-link-muted" href="/courses">Explore courses</a>
+        <a href="/login">Sign in</a>
+        <a class="nav-button" href="/register">Start learning <span aria-hidden="true">↗</span></a>
+    </nav>
+</header>
+
+<main class="landing-main">
+    <section class="landing-hero">
+        <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Practical learning for your next move</p>
+            <h1>Build skills<br><em>that compound.</em></h1>
+            <p class="hero-intro">Focused courses in Java, Spring Boot and data foundations, made for people who want to ship real work.</p>
+            <div class="hero-actions">
+                <a class="button landing-button" href="/courses">Browse the library <span aria-hidden="true">→</span></a>
+                <a class="text-link" href="/register">Create your free account <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-proof">
+                <div class="avatar-stack" aria-hidden="true"><span>AK</span><span>RS</span><span>JM</span></div>
+                <p><strong>Learn at your pace.</strong><br>Pick a course and keep moving.</p>
+            </div>
+        </div>
+        <div class="feature-visual">
+            <div class="visual-label">FEATURED PATH <span>01 / 03</span></div>
+            <div class="feature-image-wrap">
+                <img src="https://img.youtube.com/vi/9SGDpanrc8U/maxresdefault.jpg" alt="Java and Spring Boot course preview">
+                <a class="play-button" href="/courses" aria-label="Explore Java and Spring Boot course">▶</a>
+                <div class="image-caption"><span>JAVA + SPRING BOOT</span><strong>From first endpoint<br>to production mindset.</strong></div>
+            </div>
+            <div class="visual-foot"><span>6 lessons · Intermediate</span><span class="visual-arrow">↗</span></div>
+        </div>
+    </section>
+    <section class="landing-preview">
+        <div class="preview-heading">
+            <p class="eyebrow">CURATED FOR BUILDERS</p>
+            <h2>Start where<br>you are.</h2>
+        </div>
+        <div class="preview-copy">
+            <p>Short, practical paths that turn curiosity into a working project. No noise, just the next useful concept.</p>
+            <a class="text-link dark-link" href="/courses">See all courses <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="preview-index">02 <span>/</span> 03</div>
+    </section>
+</main>
+</body>
+</html>

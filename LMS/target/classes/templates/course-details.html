@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Course Details - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">ADSO</a>
+    <nav>
+        <a href="/courses">Courses</a>
+        <a th:if="${loggedIn}" href="/dashboard">Dashboard</a>
+        <a th:if="${loggedIn}" href="/my-courses">My Courses</a>
+        <a th:if="${loggedIn}" href="/profile">Profile</a>
+        <a th:if="${loggedIn}" href="/logout">Logout</a>
+        <a th:if="${!loggedIn}" href="/login">Login</a>
+        <a th:if="${!loggedIn}" class="nav-button" href="/register">Register</a>
+    </nav>
+</header>
+<main class="container">
+    <div class="detail">
+        <img class="detail-img" th:src="${course.thumbnailUrl}" th:alt="${course.title}">
+        <div>
+            <span class="badge" th:text="${course.level}"></span>
+            <h1 th:text="${course.title}"></h1>
+            <p th:text="${course.description}"></p>
+            <p><b>Instructor:</b> <span th:text="${course.instructor}"></span></p>
+            <p class="error" th:if="${error}" th:text="${error}"></p>
+            <form th:if="${loggedIn and !enrolled}" th:action="@{/courses/{id}/enroll(id=${course.id})}" method="post">
+                <button class="button" type="submit">Enroll in Course</button>
+            </form>
+            <p class="success" th:if="${enrolled}">You are enrolled in this course.</p>
+            <p th:if="${!loggedIn}"><a class="button" href="/login">Login to enroll and watch the demo</a></p>
+            <a th:if="${loggedIn}" class="button light" th:href="@{/courses/{id}/demo(id=${course.id})}">Watch Demo on YouTube</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

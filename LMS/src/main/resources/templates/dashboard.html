@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Dashboard - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">ADSO</a>
+    <nav><a href="/courses">Courses</a><a href="/my-courses">My Courses</a><a href="/profile">Profile</a><a href="/logout">Logout</a></nav>
+</header>
+<main class="container">
+    <section class="welcome">
+        <h1>Welcome, <span th:text="${user.fullName}"></span> 👋</h1>
+        <p>Continue learning from your LMS dashboard.</p>
+    </section>
+    <div class="dashboard-grid">
+        <a class="dash-card" href="/courses"><h2>Courses</h2><p>Browse all available courses.</p></a>
+        <a class="dash-card" href="/my-courses"><h2>My Courses</h2><p>View courses you enrolled in.</p></a>
+        <a class="dash-card" href="/profile"><h2>Profile</h2><p>View your account details.</p></a>
+    </div>
+</main>
+</body>
+</html>
