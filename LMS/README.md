@@ -61,8 +61,14 @@ CREATE DATABASE lms_db;
 2. Open:
 src/main/resources/application.properties
 
-Set:
-spring.datasource.password=YOUR_MYSQL_PASSWORD
+For local development, the file defaults to a local `lms` database with `root` / `root`.
+For deployment, set these environment variables instead:
+
+DATABASE_URL=jdbc:mysql://HOST:3306/DATABASE?useSSL=true&serverTimezone=UTC
+DB_USERNAME=YOUR_MYSQL_USERNAME
+DB_PASSWORD=YOUR_MYSQL_PASSWORD
+JWT_SECRET=YOUR_LONG_RANDOM_SECRET
+PORT=8080
 
 3. Start:
 
@@ -71,6 +77,16 @@ mvn spring-boot:run
 4. Open:
 
 http://localhost:8080
+
+## Vercel deployment
+
+The repository includes `Dockerfile.vercel` for Vercel's container deployment support.
+
+1. Push the repository to GitHub and import it into Vercel.
+2. Set `DATABASE_URL`, `DB_USERNAME`, `DB_PASSWORD`, and `JWT_SECRET` in the Vercel project environment variables.
+3. Redeploy the project. Vercel supplies `PORT`; locally the application defaults to port 8080.
+
+Use a hosted MySQL database. A database running on `localhost` is only reachable from your development machine.
 
 ## OTP
 
