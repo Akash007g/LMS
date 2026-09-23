@@ -1,6 +1,7 @@
 com\example\lms\entity\Course$CourseBuilder.class
 com\example\lms\entity\Enrollment$EnrollmentBuilder.class
 com\example\lms\service\CourseService.class
+com\example\lms\entity\PaymentGateway.class
 com\example\lms\service\AuthService.class
 com\example\lms\LmsApplication.class
 com\example\lms\entity\Enrollment.class

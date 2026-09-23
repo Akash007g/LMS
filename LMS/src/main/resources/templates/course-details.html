@@ -3,7 +3,7 @@
 <head><title>Course Details - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
 <body>
 <header class="navbar">
-    <a href="/" class="brand">ADSO</a>
+    <a href="/" class="brand">LMS System</a>
     <nav>
         <a href="/courses">Courses</a>
         <a th:if="${loggedIn}" href="/dashboard">Dashboard</a>
@@ -24,9 +24,11 @@
             <p><b>Instructor:</b> <span th:text="${course.instructor}"></span></p>
             <p class="error" th:if="${error}" th:text="${error}"></p>
             <form th:if="${loggedIn and !enrolled}" th:action="@{/courses/{id}/enroll(id=${course.id})}" method="post">
-                <button class="button" type="submit">Enroll in Course</button>
+                <button class="button" type="submit">Choose Payment Gateway</button>
             </form>
             <p class="success" th:if="${enrolled}">You are enrolled in this course.</p>
+            <a th:if="${enrolled and !completed}" class="button" th:href="@{/courses/{id}/test(id=${course.id})}">Take Final Test</a>
+            <a th:if="${completed}" class="button" th:href="@{/courses/{id}/certificate(id=${course.id})}">Download Certificate</a>
             <p th:if="${!loggedIn}"><a class="button" href="/login">Login to enroll and watch the demo</a></p>
             <a th:if="${loggedIn}" class="button light" th:href="@{/courses/{id}/demo(id=${course.id})}">Watch Demo on YouTube</a>
         </div>

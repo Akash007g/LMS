@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Test Result - LMS System</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body><header class="navbar"><a href="/" class="brand">LMS System</a><nav><a href="/my-courses">My Courses</a><a href="/logout">Logout</a></nav></header>
+<main class="container narrow"><div class="card">
+    <h1 th:text="${passed ? 'Course Complete' : 'Keep Learning'}"></h1>
+    <p th:text="'Your score: ' + ${score} + ' / 3'"></p>
+    <p class="success" th:if="${passed}">Congratulations. Your certificate is ready.</p>
+    <p class="error" th:if="${!passed}">You need 2 correct answers to pass. Try the test again.</p>
+    <a th:if="${passed}" class="button" th:href="@{/courses/{id}/certificate(id=${course.id})}">Download Certificate</a>
+    <a th:if="${!passed}" class="button" th:href="@{/courses/{id}/test(id=${course.id})}">Retry Test</a>
+</div></main></body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Payment - LMS System</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">LMS System</a>
+    <nav><a href="/courses">Courses</a><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></nav>
+</header>
+<main class="container narrow">
+    <div class="card">
+        <span class="badge">SECURE CHECKOUT</span>
+        <h1 th:text="'Enroll in ' + ${course.title}"></h1>
+        <p>Select your preferred payment gateway.</p>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <form th:action="@{/courses/{id}/payment(id=${course.id})}" method="post">
+            <label th:each="gateway : ${gateways}" class="gateway-option">
+                <input type="radio" name="gateway" th:value="${gateway}" required>
+                <span th:text="${gateway.label}"></span>
+            </label>
+            <p class="payment-note">Demo checkout is enabled. Connect provider keys before accepting real payments.</p>
+            <button class="button" type="submit">Continue to Payment</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

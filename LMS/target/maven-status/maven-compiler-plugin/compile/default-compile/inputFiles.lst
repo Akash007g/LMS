@@ -4,9 +4,11 @@ C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\controller
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\controller\PageController.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\dto\LoginRequest.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\dto\RegisterRequest.java
+C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\dto\TestQuestion.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\dto\VerifyOtpRequest.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\entity\Course.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\entity\Enrollment.java
+C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\entity\PaymentGateway.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\entity\Role.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\entity\User.java
 C:\Users\Admin\OneDrive\Desktop\LMS\LMS\src\main\java\com\example\lms\exception\GlobalExceptionHandler.java

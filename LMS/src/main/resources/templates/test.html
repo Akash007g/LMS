@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Final Test - LMS System</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body><header class="navbar"><a href="/" class="brand">LMS System</a><nav><a href="/my-courses">My Courses</a><a href="/logout">Logout</a></nav></header>
+<main class="container narrow"><div class="card"><span class="badge">FINAL TEST</span><h1 th:text="${course.title}"></h1>
+<p>Answer at least 2 of 3 questions correctly to complete the course.</p>
+<form method="post" th:action="@{/courses/{id}/test(id=${course.id})}">
+    <fieldset class="question" th:each="question : ${questions}"><legend th:text="${question.prompt}"></legend>
+        <label th:each="option : ${question.options}" class="answer-option"><input type="radio" th:name="${question.id}" th:value="${option}" required><span th:text="${option}"></span></label>
+    </fieldset><button class="button" type="submit">Submit Test</button>
+</form></div></main></body></html>

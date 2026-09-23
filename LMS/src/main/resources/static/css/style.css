@@ -16,6 +16,15 @@ a { text-decoration:none; color:inherit; }
 .button.small { padding:9px 13px; }
 .card { background:white; padding:30px; border-radius:18px; box-shadow:0 8px 30px #00000010; }
 form { display:grid; gap:10px; }
+.search-form { display:flex; align-items:center; gap:10px; margin:20px 0 28px; }
+.search-form input { flex:1; margin:0; }
+.gateway-option { display:flex; align-items:center; gap:12px; padding:14px; border:1px solid #d1d5db; border-radius:8px; cursor:pointer; }
+.gateway-option input { width:auto; margin:0; }
+.payment-note { color:#6b7280; font-size:13px; line-height:1.5; }
+.question { display:grid; gap:10px; border:0; padding:0; margin:20px 0; }
+.question legend { font-weight:bold; margin-bottom:4px; }
+.answer-option { display:flex; align-items:center; gap:10px; padding:11px; border:1px solid #d1d5db; border-radius:8px; cursor:pointer; }
+.answer-option input { width:auto; margin:0; }
 input { width:100%; padding:13px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; margin-bottom:8px; }
 label { font-weight:bold; }
 .error { color:#b91c1c; background:#fee2e2; padding:10px; border-radius:8px; }
@@ -32,6 +41,7 @@ label { font-weight:bold; }
 .detail-img { width:100%; border-radius:14px; }
 .detail p { line-height:1.7; color:#4b5563; }
 @media(max-width:800px) { .course-grid,.dashboard-grid,.detail {grid-template-columns:1fr;} .hero h1{font-size:40px;} .navbar nav{gap:8px;font-size:13px;} }
+@media(max-width:600px) { .search-form { align-items:stretch; flex-wrap:wrap; } .search-form input { flex-basis:100%; } }
 
 /* Landing page */
 .landing-page { background:#f1ede5; color:#20231f; font-family:"Trebuchet MS",Arial,sans-serif; }

@@ -3,7 +3,7 @@
 <head><title>My Courses - LMS</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
 <body>
 <header class="navbar">
-    <a href="/" class="brand">ADSO</a>
+    <a href="/" class="brand">LMS System</a>
     <nav><a href="/dashboard">Dashboard</a><a href="/courses">Courses</a><a href="/profile">Profile</a><a href="/logout">Logout</a></nav>
 </header>
 <main class="container">
@@ -17,6 +17,7 @@
                 <h2 th:text="${course.title}"></h2>
                 <p th:text="${course.description}"></p>
                 <a class="button small" th:href="@{/courses/{id}(id=${course.id})}">Open Course</a>
+                <a class="button small light" th:href="@{/courses/{id}/test(id=${course.id})}">Final Test</a>
             </div>
         </article>
     </div>

@@ -22,4 +22,6 @@ public class Enrollment {
     private Course course;
 
     private LocalDateTime enrolledAt;
+    private LocalDateTime completedAt;
+    private Integer testScore;
 }
